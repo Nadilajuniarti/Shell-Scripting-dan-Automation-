@@ -1,0 +1,43 @@
+IMPLEMENTASI
+
+# A. Variabel
+1. Perintah `nama="Nadila"` dan `umur=18` digunakan untuk membuat variabel yang menyimpan data dan dapat dipanggil menggunakan `$nama` atau `$umur`.
+2. Perintah `#!/bin/bash` digunakan untuk menentukan bahwa script dijalankan menggunakan Bash shell (*shebang*).
+3. Perintah `read nama` digunakan untuk menerima input dari pengguna dan menyimpannya ke dalam variabel.
+
+# B. Kondisi
+1. Perintah `if [ $angka -gt 5 ]` digunakan untuk mengecek apakah nilai lebih besar dari 5, di mana `-gt` berarti greater than.
+2. Struktur `if ... then ... else ... fi` digunakan untuk percabangan kondisi.
+
+# C. Perulangan
+1. Perintah `for angka in {1..5}` digunakan untuk melakukan perulangan dari 1 sampai 5.
+2. Perintah `echo "Angka saat ini: $angka"` digunakan untuk menampilkan hasil setiap iterasi.
+
+# D. Automasi dengan Cron Job
+1. `nano log_time.sh` → membuat script  
+2. `date >> log_time.txt` → mencatat waktu  
+3. `chmod +x log_time.sh` → memberi izin eksekusi  
+4. `crontab -e` → membuka pengaturan cron  
+5. `* * * * * ~/log_time.sh` → menjalankan setiap 1 menit  
+6. `crontab -l` → melihat cron job  
+7. `cat log_time.txt` → melihat hasil  
+
+Jika berhasil, file log akan terus bertambah setiap menit.
+
+# E. Automasi dengan Systemd Timer
+1. Membuat file service  
+2. Mengisi service  
+3. Membuat file timer  
+4. Mengisi timer  
+5. `systemctl enable --now log_time.timer`  
+6. `systemctl list-timers`  
+
+Timer akan menjalankan script secara otomatis.
+
+# F. Debugging dan Logging
+1. `journalctl` → melihat semua log  
+2. `journalctl --since "30 minutes ago"` → log terbaru  
+3. `journalctl -u cron` → log cron  
+4. `journalctl -b -1` → log boot  
+5. `journalctl -f` → real-time  
+6. `dmesg` → log kernel  
