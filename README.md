@@ -14,3 +14,9 @@ Repository ini berisi hasil praktikum Sistem Operasi Modul 3 tentang Shell Scrip
 - Bash Shell
 - Cron
 - Systemd
+
+
+Cara Menjalankan Script
+
+chmod +x script/log_time.sh
+./script/log_time.sh
